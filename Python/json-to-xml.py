@@ -1,5 +1,3 @@
-# https://github.com/quandyfactory/dicttoxml
-
 import json, dicttoxml, sys
 
 # pass the filename as an argument when calling this script
