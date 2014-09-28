@@ -3,5 +3,6 @@ Set of scripts to work with CSV & json files. I've written scrips for PowerShell
  - csv-to-json
  - json-to-csv
  - json-to-xml
+ - json-to-sqlite
 
 Use these scripts as you care to.
