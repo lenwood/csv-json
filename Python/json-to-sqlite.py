@@ -23,5 +23,5 @@ queryString = " ".join(query)
 conn = sqlite3.connect(filename_out) # or use :memory: to put it in RAM
 with conn:
 	cur = conn.cursor()
-	cur.execute("CREATE TABLE IF NOT EXISTS logfile(" + jsonColumns + ")")
+	cur.execute("CREATE TABLE IF NOT EXISTS jsonFile(" + jsonColumns + ")")
 	cur.executemany(queryString, jsonData)
