@@ -4,12 +4,15 @@ import csv, sqlite3, sys
 # pass the filename as an argument when calling this script
 if len(sys.argv) < 2:
 	sys.exit('Usage: csv-to-sqlite.py file.csv')
-filename_in = sys.argv[1]
-filename_list = [filename_in.split('.')[0], 'db']
-filename_out = ".".join(filename_list)
+fileIn = sys.argv[1]
+fileList = [fileIn.split('.')[0], 'db']
+try:
+	fileOut = sys.argv[2]
+except:
+	fileOut = ".".join(fileList)
 
 # read the file
-data = csv.reader(open(filename_in, 'rU'), delimiter=',')
+data = csv.reader(open(fileIn, 'rU'), delimiter=',')
 
 # structure the csv data
 csvHeaderRow = data.next()
@@ -22,7 +25,7 @@ query = ["INSERT INTO csvFile VALUES (", csvValues, ")"]
 queryString = " ".join(query)
 
 # connect to the database & execute the query
-conn = sqlite3.connect(filename_out)
+conn = sqlite3.connect(fileOut)
 with conn:
 	cur = conn.cursor()
 	cur.execute("CREATE TABLE IF NOT EXISTS csvFile(" + csvHeaders + ")")

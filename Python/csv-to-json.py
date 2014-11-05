@@ -4,11 +4,14 @@ import csv, json, sys
 # pass the filename as an argument when calling this script
 if len(sys.argv) < 2:
 	sys.exit('Usage: csv-to-json.py file.csv')
-filename_in = sys.argv[1]
-filename_list = [filename_in.split('.')[0], 'json']
-filename_out = ".".join(filename_list)
+fileIn = sys.argv[1]
+fileList = [fileIn.split('.')[0], 'json']
+try:
+	fileOut = sys.argv[2]
+except:
+	fileOut = ".".join(fileList)
 
-data = csv.reader(open(filename_in, 'rU'), delimiter=',')
+data = csv.reader(open(fileIn, 'rU'), delimiter=',')
 
 # get header row
 fieldnames = data.next()
@@ -32,6 +35,6 @@ for row in data:
 
 	i = i + 1
 
-with open(filename_out, 'w') as outfile:
+with open(fileOut, 'w') as outfile:
 	json.dump(jsonList, outfile, sort_keys=True, indent=4, ensure_ascii=False)
 sys.exit()

@@ -4,12 +4,15 @@ import json, dicttoxml, sys
 # pass the filename as an argument when calling this script
 if len(sys.argv) < 2:
 	sys.exit('Usage: json-to-xml.py file.json')
-filename_in = sys.argv[1]
-filename_list = [filename_in.split('.')[0], 'xml']
-filename_out = ".".join(filename_list)
+fileIn = sys.argv[1]
+fileList = [fileIn.split('.')[0], 'xml']
+try:
+	fileOut = sys.argv[2]
+except:
+	fileOut = ".".join(fileList)
 
 # read the json file filename in
-input = open(filename_in)
+input = open(fileIn)
 data = json.load(input)
 input.close()
 
@@ -17,5 +20,5 @@ input.close()
 xml = dicttoxml.dicttoxml(data)
 
 # write the xml file
-with open(filename_out, "wb+") as outfile:
+with open(fileOut, "wb+") as outfile:
 	outfile.write(xml)
