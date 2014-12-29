@@ -5,10 +5,10 @@ import csv, sqlite3, sys
 if len(sys.argv) < 2:
 	sys.exit('Usage: csv-to-sqlite.py file.csv')
 fileIn = sys.argv[1]
-fileList = [fileIn.split('.')[0], 'db']
 try:
 	fileOut = sys.argv[2]
 except:
+	fileList = [fileIn.split('.')[0], 'db']
 	fileOut = ".".join(fileList)
 
 # read the file

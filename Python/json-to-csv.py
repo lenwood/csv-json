@@ -5,10 +5,10 @@ import csv, json, sys
 if len(sys.argv) < 2:
 	sys.exit('Usage: json-to-csv.py file.json')
 fileIn = sys.argv[1]
-fileList = [fileIn.split('.')[0], 'csv']
 try:
 	fileOut = sys.argv[2]
 except:
+	fileList = [fileIn.split('.')[0], 'csv']
 	fileOut = ".".join(fileList)
 
 # read in the json file

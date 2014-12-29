@@ -5,10 +5,10 @@ import csv, sqlite3, sys
 if len(sys.argv) < 2:
 	sys.exit('Usage: tsv-to-csv.py file.tsv')
 fileIn = sys.argv[1]
-fileList = [fileIn.split('.')[0], 'csv']
 try:
 	fileOut = sys.argv[2]
 except:
+	fileList = [fileIn.split('.')[0], 'csv']
 	fileOut = ".".join(fileList)
 
 with open(fileIn, 'rU') as tsvin, open(fileOut, 'wb+') as csvout:

@@ -5,10 +5,10 @@ import json, sqlite3, sys
 if len(sys.argv) < 2:
 	sys.exit('Usage: json-to-sqlite.py file.json')
 fileIn = sys.argv[1]
-fileList = [fileIn.split('.')[0], 'db']
 try:
 	fileOut = sys.argv[2]
 except:
+	fileList = [fileIn.split('.')[0], 'db']
 	fileOut = ".".join(fileList)
 
 # read in the filename

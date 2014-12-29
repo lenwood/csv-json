@@ -5,10 +5,10 @@ import json, dicttoxml, sys
 if len(sys.argv) < 2:
 	sys.exit('Usage: json-to-xml.py file.json')
 fileIn = sys.argv[1]
-fileList = [fileIn.split('.')[0], 'xml']
 try:
 	fileOut = sys.argv[2]
 except:
+	fileList = [fileIn.split('.')[0], 'xml']
 	fileOut = ".".join(fileList)
 
 # read the json file filename in
