@@ -3,7 +3,7 @@ import csv, json, os, sys
 
 # pass the filename as an argument when calling this script
 if len(sys.argv) < 2:
-	sys.exit('Usage: csv-to-json.py file.csv')
+	sys.exit('Usage: csv-to-json.py /path/to/file.csv')
 fileIn = sys.argv[1]
 fileOnly = os.path.basename(fileIn)
 try:

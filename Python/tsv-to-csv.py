@@ -3,7 +3,7 @@ import csv, os, sqlite3, sys
 
 # pass the filename as an argument when calling this script
 if len(sys.argv) < 2:
-	sys.exit('Usage: tsv-to-csv.py file.tsv')
+	sys.exit('Usage: tsv-to-csv.py /path/to/file.tsv')
 fileIn = sys.argv[1]
 fileOnly = os.path.basename(fileIn)
 try:
