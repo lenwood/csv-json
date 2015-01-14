@@ -1,14 +1,15 @@
 #!/usr/bin/python
-import csv, sqlite3, sys
+import csv, os, sqlite3, sys
 
 # pass the filename as an argument when calling this script
 if len(sys.argv) < 2:
 	sys.exit('Usage: csv-to-sqlite.py file.csv')
 fileIn = sys.argv[1]
+fileOnly = os.path.basename(fileIn)
 try:
 	fileOut = sys.argv[2]
 except:
-	fileList = [fileIn.split('.')[0], 'db']
+	fileList = [fileOnly.split('.')[0], 'db']
 	fileOut = ".".join(fileList)
 
 # read the file

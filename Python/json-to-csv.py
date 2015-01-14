@@ -1,10 +1,11 @@
 #!/usr/bin/python
-import csv, json, sys
+import csv, json, os, sys
 
 # pass the filename as an argument when calling this script
 if len(sys.argv) < 2:
 	sys.exit('Usage: json-to-csv.py file.json')
 fileIn = sys.argv[1]
+fileOnly = os.path.basename(fileIn)
 try:
 	fileOut = sys.argv[2]
 except:
