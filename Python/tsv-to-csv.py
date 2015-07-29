@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import csv, os, sqlite3, sys
+import csv, os, sys
 
 # pass the filename as an argument when calling this script
 if len(sys.argv) < 2:
