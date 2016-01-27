@@ -8,7 +8,7 @@ fileIn = sys.argv[1]
 fileOnly = os.path.basename(fileIn)
 try:
 	fileOut = sys.argv[2]
-except:
+except IndexError:
 	fileList = [fileIn.split('.')[0], 'csv']
 	fileOut = ".".join(fileList)
 

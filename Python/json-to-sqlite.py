@@ -8,7 +8,7 @@ fileIn = sys.argv[1]
 fileOnly = os.path.basename(fileIn)
 try:
 	fileOut = sys.argv[2]
-except:
+except IndexError:
 	fileList = [fileOnly.split('.')[0], 'db']
 	fileOut = ".".join(fileList)
 
